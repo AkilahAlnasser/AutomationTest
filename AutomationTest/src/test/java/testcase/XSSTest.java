@@ -1,8 +1,8 @@
 package testcase;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -13,20 +13,15 @@ public class XSSTest {
 	
   @Test
   public void testXSS() {
-	 
+	 //First testcase
+	  driver.findElement(By.linkText("XSS (Reflected)")).click();
   }
   @BeforeClass
   public void open_browser() {
 	//WebDriverManager.chromedriver().setup();  
-	 // WebDriver driver =new ChromeDriver();
-	  System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
-
+	 // System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
+	  driver =new ChromeDriver();
 	  driver.get("http://localhost/dvwa/");
-  }
-  @AfterClass
-  public void close_browser()
-  {
-	 // driver.close();
   }
   
 }

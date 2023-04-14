@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import securitycheck.XSSUtils;
 
 public class XSSTest {
 	 WebDriver driver;
@@ -23,6 +24,9 @@ public class XSSTest {
 	 driver.findElement(By.linkText("XSS (Reflected)")).click();
 	 driver.findElement(By.name("name")).sendKeys("<sCRiPt> alert(\"You have been hacked!\"); </script>");
 	 driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/p/input[2]")).click();
+	 //if the alert shown then the xss is present 
+	 //if xss is present then assert is vulnerable and condition is false
+	XSSUtils.AssertNotVulnerable(false, "This page is Not vulnerable");
   }
   @BeforeClass
   public void open_browser() {

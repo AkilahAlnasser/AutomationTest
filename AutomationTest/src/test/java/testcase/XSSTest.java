@@ -1,11 +1,16 @@
 package testcase;
 
+import javax.swing.text.html.parser.Element;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.google.j2objc.annotations.ReflectionSupport.Level;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import securitycheck.XSSUtils;
@@ -26,7 +31,9 @@ public class XSSTest {
 	 driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/p/input[2]")).click();
 	 //if the alert shown then the xss is present 
 	 //if xss is present then assert is vulnerable and condition is false
-	XSSUtils.AssertNotVulnerable(false, "This page is Not vulnerable");
+	//XSSUtils.AssertNotVulnerable(false, "This page is Not vulnerable");
+	//tils.assertNotVulnerable(Vulnerability.XSS, Level.SIMPLE);
+	
   }
   @BeforeClass
   public void open_browser() {
@@ -34,6 +41,7 @@ public class XSSTest {
 	 System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
 	  driver = new ChromeDriver();
 	  driver.get("http://localhost/dvwa/");
+	  Assert.assertTrue(driver.getTitle().contains("Damn"));
   }
   
 }

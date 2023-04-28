@@ -42,17 +42,26 @@ public class XSSTest {
 	 driver.findElement(By.name("mtxMessage")).sendKeys("<sCRiPt> alert(\"You have been hacked!\"); </script>");
 	 driver.findElement(By.name("btnSign")).click();
 	 
-	 //WebDriverWait wait1 = new WebDriverWait(driver, 10);
-	// Alert alert1 = wait1.until(ExpectedConditions.alertIsPresent());
-	// Thread.sleep(1000);
-	 //alert1.accept();
+
+	 WebDriverWait wait1 = new WebDriverWait(driver, 10);
+	 Alert alert1 = wait1.until(ExpectedConditions.alertIsPresent());
+	 Thread.sleep(1000);
+	 alert1.accept();
 	 
+	 driver.findElement(By.name("btnClear")).click();
+	 WebDriverWait waitclear = new WebDriverWait(driver, 10);
+	 Alert alertclear = wait1.until(ExpectedConditions.alertIsPresent());
+	 Thread.sleep(1000);
+	 alertclear.accept();
+	 
+	 driver.findElement(By.linkText("CSRF")).click();
 	 //if the alert shown then the xss is present 
 	 //if xss is present then assert is vulnerable and condition is false
 	//XSSUtils.AssertNotVulnerable(false, "This page is Not vulnerable");
 	//tils.assertNotVulnerable(Vulnerability.XSS, Level.SIMPLE);
 	// XSSUtils.AssertNotVulnerable(alert present, lEVEL MUST be simple)
-	
+	 XSSUtils.AssertNotVulnerable(XSSUtils.XSS);
+	 
   }
   
   

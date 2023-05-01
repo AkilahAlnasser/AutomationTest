@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-28T15:56:43Z" name="Default suite" finished-at="2023-04-28T15:56:49Z" duration-ms="5470">
+  <suite started-at="2023-05-01T23:21:37Z" name="Default suite" finished-at="2023-05-01T23:21:43Z" duration-ms="5999">
     <groups>
     </groups>
-    <test started-at="2023-04-28T15:56:43Z" name="Default test" finished-at="2023-04-28T15:56:49Z" duration-ms="5470">
+    <test started-at="2023-05-01T23:21:37Z" name="Default test" finished-at="2023-05-01T23:21:43Z" duration-ms="5999">
       <class name="testcase.XSSTest">
-        <test-method is-config="true" signature="open_browser()[pri:0, instance:testcase.XSSTest@8e50104]" started-at="2023-04-28T15:56:43Z" name="open_browser" finished-at="2023-04-28T15:56:45Z" duration-ms="1171" status="PASS">
+        <test-method is-config="true" signature="open_browser()[pri:0, instance:testcase.XSSTest@6f7923a5]" started-at="2023-05-01T23:21:37Z" name="open_browser" finished-at="2023-05-01T23:21:39Z" duration-ms="1546" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- open_browser -->
-        <test-method signature="testXSSReStored()[pri:0, instance:testcase.XSSTest@8e50104]" started-at="2023-04-28T15:56:45Z" name="testXSSReStored" finished-at="2023-04-28T15:56:45Z" duration-ms="4" status="PASS">
+        <test-method signature="testXSSReStored()[pri:0, instance:testcase.XSSTest@6f7923a5]" started-at="2023-05-01T23:21:39Z" name="testXSSReStored" finished-at="2023-05-01T23:21:39Z" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testXSSReStored -->
-        <test-method signature="testXSSReflected()[pri:0, instance:testcase.XSSTest@8e50104]" started-at="2023-04-28T15:56:45Z" name="testXSSReflected" finished-at="2023-04-28T15:56:49Z" duration-ms="4272" status="PASS">
+        <test-method signature="testXSSReflected()[pri:0, instance:testcase.XSSTest@6f7923a5]" started-at="2023-05-01T23:21:39Z" name="testXSSReflected" finished-at="2023-05-01T23:21:43Z" duration-ms="4419" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testXSSReflected -->

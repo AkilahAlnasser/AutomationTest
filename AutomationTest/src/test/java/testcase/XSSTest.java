@@ -60,6 +60,7 @@ public class XSSTest {
 	//XSSUtils.AssertNotVulnerable(false, "This page is Not vulnerable");
 	//tils.assertNotVulnerable(Vulnerability.XSS, Level.SIMPLE);
 	// XSSUtils.AssertNotVulnerable(alert present, lEVEL MUST be simple)
+	
 	 XSSUtils.AssertNotVulnerable(XSSUtils.XSS);
 	 
   }

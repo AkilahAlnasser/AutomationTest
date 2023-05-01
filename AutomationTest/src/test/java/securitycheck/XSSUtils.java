@@ -22,9 +22,9 @@ public class XSSUtils {
 			 Alert alertclear = wait1.until(ExpectedConditions.alertIsPresent());
 				 Thread.sleep(1000);
 				 alertclear.accept();
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	  public static boolean AssertNotVulnerable(Object vuln) {

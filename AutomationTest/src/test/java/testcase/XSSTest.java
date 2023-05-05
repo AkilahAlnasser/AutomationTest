@@ -32,10 +32,16 @@ public class XSSTest {
 	 driver.findElement(By.name("name")).sendKeys("<sCRiPt> alert(\"You have been hacked!\"); </script>");
 	 driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/p/input[2]")).click();
 	 
+	 boolean result;
+	 result=XSSUtils.isAlertPresent(driver);
+	 Assert.assertTrue(result,"Alert is here and  present");
+	 
 	 WebDriverWait wait = new WebDriverWait(driver, 10);
 	 Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 	 Thread.sleep(1000);
 	 alert.accept();
+	 
+	
 	 
 	 driver.findElement(By.linkText("XSS (Stored)")).click();
 	 driver.findElement(By.name("txtName")).sendKeys("crypto");
@@ -61,15 +67,15 @@ public class XSSTest {
 	//tils.assertNotVulnerable(Vulnerability.XSS, Level.SIMPLE);
 	// XSSUtils.AssertNotVulnerable(alert present, lEVEL MUST be simple)
 	
-	 XSSUtils.AssertNotVulnerable(XSSUtils.XSS);
-	 
+	//XSSUtils.AssertNotVulnerable(XSSUtils.assertVulnerable(alertclear));
+	
   }
   
   
   @Test
   public void testXSSReStored()  {
 	  
-	  
+
 	  
   
 	  

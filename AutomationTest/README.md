@@ -1,6 +1,7 @@
 # AutomationTest
 Java Library to faciliate atomation testing using selemnium
 
+<img src="https://user-images.githubusercontent.com/130008342/236549472-412d0080-49d6-45b3-8ce9-6f3a6bb87133.png" width="75%" height="75%">
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
@@ -19,7 +20,7 @@ Download DVWA and set it up
 The design plan instructured as follow
 
 
-![image](https://user-images.githubusercontent.com/130008342/231169914-3c11818c-aeb7-49f7-88ef-0461ff386c97.png)
+<img src="https://user-images.githubusercontent.com/130008342/231169914-3c11818c-aeb7-49f7-88ef-0461ff386c97.png" width="50%" height="50%">
 
 After implemnting the design will be as follow
 
@@ -28,7 +29,7 @@ After implemnting the design will be as follow
 
 ### The Setup
 
-![image](https://user-images.githubusercontent.com/130008342/231166625-e8d3d5ee-179c-4a36-9994-acec7ebdbc7e.png)
+<img src="https://user-images.githubusercontent.com/130008342/231166625-e8d3d5ee-179c-4a36-9994-acec7ebdbc7e.png" width="50%" height="50%">
 
 ## Running the tests
 

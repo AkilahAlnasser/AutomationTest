@@ -28,7 +28,9 @@ After implemnting the design will be as follow
 <img width="170" alt="image" src="https://user-images.githubusercontent.com/130008342/231172461-18dd4be5-c5a6-4e51-91df-c0478ee0bff8.png">
 
 ### The Setup
-
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=5MQOK7xD0O0" target="_blank">
+<img src="http://img.youtube.com/vi/5MQOK7xD0O0/mqdefault.jpg" alt="Watch the video" width="240" height="180" border="10" />
+</a>
 <img src="https://user-images.githubusercontent.com/130008342/231166625-e8d3d5ee-179c-4a36-9994-acec7ebdbc7e.png" width="50%" height="50%">
 
 ## Running the tests

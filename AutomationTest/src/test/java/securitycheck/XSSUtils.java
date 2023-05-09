@@ -27,7 +27,7 @@ public class XSSUtils {
 		// if vulnrabiltyt.xss then go to the level if the level. simple which
 		//is ,script> alert() </script> if the alert not present then
 		//retun true
-
+//try it
 		boolean alert= isAlertPresent(driver);
 		if (alert==true) {
 			try {

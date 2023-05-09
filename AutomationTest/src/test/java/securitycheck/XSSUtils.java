@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 public class XSSUtils {
 	 //public static String XSS="xss";
-	static WebDriver driver;
+	private static WebDriver driver;
 	public static boolean isAlertPresent(WebDriver driver){
 	    boolean foundAlert = false;
 	    WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -23,21 +23,33 @@ public class XSSUtils {
 	    }
 	    return foundAlert;
 	}
-	public static boolean assertVulnerable( Object a) throws InterruptedException {
+	public static boolean assertVulnerable( WebDriver driver, String message) throws InterruptedException {
 		// if vulnrabiltyt.xss then go to the level if the level. simple which
 		//is ,script> alert() </script> if the alert not present then
-		//retun true 
-		if (a== vulnerabilty.XSS) {
-		WebDriverWait wait1 = new WebDriverWait(driver, 10);
+		//retun true
+
+		boolean alert= isAlertPresent(driver);
+		if (alert==true) {
+			try {
+		//WebDriverWait wait1 = new WebDriverWait(driver, 10);
 		//boolean alertIsPresent= ExpectedConditions.alertIsPresent() != null;
 	
-		 
+		// Assert.assertTrue(alert);
 		
-			 Alert alertclear = wait1.until(ExpectedConditions.alertIsPresent());
-				 Thread.sleep(1000);
-				 alertclear.accept();
+			// Alert alertclear = wait1.until(ExpectedConditions.alertIsPresent());
+				// Thread.sleep(1000);
+				// alertclear.accept();
+				System.out.println(message);
 			return true;
+			
+			
+		} catch (TimeoutException e) {
+			System.out.println("alert not present");
+			        return false;
+			        
+			    }
 		}
+		
 		return false;
 	}
 

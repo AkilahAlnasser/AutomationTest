@@ -6,7 +6,7 @@
       <class name="testcase.XSSTest">
         <methods>
           <include name="open_browser"/>
-          <include name="testXSSReStored"/>
+          <include name="testXSSReflected"/>
         </methods>
       </class> <!-- testcase.XSSTest -->
     </classes>

@@ -32,9 +32,10 @@ public class XSSTest {
 	 driver.findElement(By.name("name")).sendKeys("<sCRiPt> alert(\"You have been hacked!\"); </script>");
 	 driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/p/input[2]")).click();
 	 
-	 boolean result;
-	 result=XSSUtils.isAlertPresent(driver);
-	 Assert.assertTrue(result,"Alert is here and  present");
+	 //boolean result;
+	// result=XSSUtils.isAlertPresent(driver);
+	 XSSUtils.assertVulnerable(driver, "the page is vulnerable");
+	// Assert.assertTrue(result,"Alert is here and  present");
 	 
 	 WebDriverWait wait = new WebDriverWait(driver, 10);
 	 Alert alert = wait.until(ExpectedConditions.alertIsPresent());
@@ -51,6 +52,7 @@ public class XSSTest {
 
 	 WebDriverWait wait1 = new WebDriverWait(driver, 10);
 	 Alert alert1 = wait1.until(ExpectedConditions.alertIsPresent());
+	// assertThat(open_browser..isAlertDisplayed()).isFalse();
 	 Thread.sleep(1000);
 	 alert1.accept();
 	 
@@ -68,6 +70,7 @@ public class XSSTest {
 	// XSSUtils.AssertNotVulnerable(alert present, lEVEL MUST be simple)
 	
 	//XSSUtils.AssertNotVulnerable(XSSUtils.assertVulnerable(alertclear));
+	 
 	
   }
   
@@ -87,6 +90,7 @@ public class XSSTest {
 	  driver = new ChromeDriver();
 	  driver.get("http://localhost/dvwa/");
 	  Assert.assertTrue(driver.getTitle().contains("Damn"));
+	  
   }
   
 }

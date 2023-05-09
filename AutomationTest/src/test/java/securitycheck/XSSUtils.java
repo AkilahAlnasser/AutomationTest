@@ -30,7 +30,7 @@ public class XSSUtils {
 //try it
 		boolean alert= isAlertPresent(driver);
 		if (alert==true) {
-			try {
+			try {//try begain
 		//WebDriverWait wait1 = new WebDriverWait(driver, 10);
 		//boolean alertIsPresent= ExpectedConditions.alertIsPresent() != null;
 	

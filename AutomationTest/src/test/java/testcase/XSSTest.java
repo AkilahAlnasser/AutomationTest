@@ -37,7 +37,7 @@ public class XSSTest {
 	 XSSUtils.assertVulnerable(driver, "the page is vulnerable");
 	// Assert.assertTrue(result,"Alert is here and  present");
 	 
-	 WebDriverWait wait = new WebDriverWait(driver, 10);//
+	 WebDriverWait wait = new WebDriverWait(driver, 10);//d
 	 Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 	 Thread.sleep(1000);
 	 alert.accept();

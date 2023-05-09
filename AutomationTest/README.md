@@ -1,6 +1,8 @@
 # AutomationTest
 Java Library to faciliate atomation testing using selemnium
 
+<img src="https://user-images.githubusercontent.com/130008342/236549472-412d0080-49d6-45b3-8ce9-6f3a6bb87133.png" width="75%" height="75%">
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
@@ -8,27 +10,35 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Download the eclipse 
-Download XAPP
-Download DVWA and set it up
+Installing Java development toolkit (JDK) eclipse 
+Installing XAPP to run the DVAW
+Installing DVWA and set it up and change the setting to enable all the database setup
+TestNg Framework was installing inside the JDK environment  
 
 ```
 ### Installing
 
 
-The design plan instructured as follow
+ <ins> planning the design instructures as follow</ins>
 
 
-![image](https://user-images.githubusercontent.com/130008342/231169914-3c11818c-aeb7-49f7-88ef-0461ff386c97.png)
+<img src="https://user-images.githubusercontent.com/130008342/231169914-3c11818c-aeb7-49f7-88ef-0461ff386c97.png" width="50%" height="50%">
 
-After implemnting the design will be as follow
+ <ins>After implemnting the design will be as follow</ins>
+
+<img width="204" alt="image" src="https://user-images.githubusercontent.com/130008342/236644809-c1909393-3f5a-497a-b859-ab9b99389f4f.png">
 
 
-<img width="170" alt="image" src="https://user-images.githubusercontent.com/130008342/231172461-18dd4be5-c5a6-4e51-91df-c0478ee0bff8.png">
 
 ### The Setup
 
-![image](https://user-images.githubusercontent.com/130008342/231166625-e8d3d5ee-179c-4a36-9994-acec7ebdbc7e.png)
+<ins>The following steps were applied to setup</ins>
+
+<img src="https://user-images.githubusercontent.com/130008342/231166625-e8d3d5ee-179c-4a36-9994-acec7ebdbc7e.png" width="50%" height="50%">
+
+<ins>Watch the setup video </ins>
+
+[![Watch the video](https://img.youtube.com/vi/5MQOK7xD0O0/0.jpg)](https://www.youtube.com/watch?v=5MQOK7xD0O0 "Watch the video")
 
 ## Running the tests
 

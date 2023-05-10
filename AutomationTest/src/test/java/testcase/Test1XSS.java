@@ -14,11 +14,12 @@ import org.testng.annotations.Test;
 
 import com.google.j2objc.annotations.ReflectionSupport.Level;
 
+import base.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import securitycheck.XSSUtils;
 
-public class XSSTest {
-	 WebDriver driver;
+public class Test1XSS extends BaseTest{
+	 //WebDriver driver;
 	
   @Test
   public void testXSSReflected() throws InterruptedException {
@@ -83,14 +84,15 @@ public class XSSTest {
   
 	  
   }
-  @BeforeClass
-  public void open_browser() {
-	//WebDriverManager.chromedriver().setup();  
-	 System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
-	  driver = new ChromeDriver();
-	  driver.get("http://localhost/dvwa/");
-	  Assert.assertTrue(driver.getTitle().contains("Damn"));
+ 
+  //@BeforeClass
+ // public void open_browser() {
+	//WebDriverManager.chromedriver().setup();  //base
+	// System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
+	//  driver = new ChromeDriver();//base
+	  //driver.get("http://localhost/dvwa/");//Externalise to properties 
+	//  Assert.assertTrue(driver.getTitle().contains("Damn"));
 	  
-  }
+  //}
   
 }

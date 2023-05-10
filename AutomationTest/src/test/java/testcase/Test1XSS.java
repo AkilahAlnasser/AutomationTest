@@ -19,7 +19,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import securitycheck.XSSUtils;
 
 public class Test1XSS extends BaseTest{
-	 //WebDriver driver;
+	 
 	
   @Test
   public void testXSSReflected() throws InterruptedException {
@@ -63,7 +63,7 @@ public class Test1XSS extends BaseTest{
 	 Thread.sleep(1000);
 	 alertclear.accept();
 	 
-	 driver.findElement(By.linkText("CSRF")).click();
+	
 	 //if the alert shown then the xss is present 
 	 //if xss is present then assert is vulnerable and condition is false
 	//XSSUtils.AssertNotVulnerable(false, "This page is Not vulnerable");

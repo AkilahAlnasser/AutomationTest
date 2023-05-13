@@ -1,6 +1,8 @@
 package securitycheck;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,6 +12,7 @@ import org.testng.Assert;
 public class XSSUtils {
 	 //public static String XSS="xss";
 	private static WebDriver driver;
+	private static WebElement tag;
 	public static boolean isAlertPresent(WebDriver driver){
 	    boolean foundAlert = false;
 	    WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -65,5 +68,27 @@ public class XSSUtils {
 		   return true;
 		  }
 	  
+		public static boolean isPasswordChanged(boolean foundtag){
+		    
+		    //WebDriverWait wait = new WebDriverWait(driver, 10);
+		    try {
+				
+				 if (foundtag) {
+					
+					 System.out.println("the site is vulnerable");
+				
+		  
+		       
+		    } else {
+			   	 foundtag= false;
+			   	System.out.println("password didn't change");
+		    }
+				 }catch (TimeoutException e) {
 	
+						System.out.println("timeout no result");
+			
+		    }
+			return foundtag;
+		  
+		}
 }//XSSUtils.AssertNotVulnerable(XSSUtils.XSS);

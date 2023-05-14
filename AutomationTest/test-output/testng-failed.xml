@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcase.Test2CSRF">
+      <class name="testcase.Test3CommandInjection">
         <methods>
           <include name="setUp"/>
-          <include name="testCSRFLow"/>
+          <include name="commandInjectionLow"/>
         </methods>
-      </class> <!-- testcase.Test2CSRF -->
+      </class> <!-- testcase.Test3CommandInjection -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
-import securitycheck.XSSUtils;
+import securitycheck.SecUtils;
 
 public class Test2CSRF extends BaseTest {
 	// WebDriver driver;
@@ -47,7 +47,7 @@ public class Test2CSRF extends BaseTest {
 		Thread.sleep(1000);
 		boolean findtext = tag.getText().equalsIgnoreCase("password changed.");
 
-		XSSUtils.isPasswordChanged(findtext);
+		SecUtils.isPasswordChanged(findtext);
 
 	}
 
@@ -82,8 +82,7 @@ public void testCSRFMeduim() throws InterruptedException {
 	Thread.sleep(1000);
 	boolean findtext = tag.getText().equalsIgnoreCase("password changed.");
 
-
-	XSSUtils.isPasswordChanged(findtext);
+	SecUtils.isPasswordChanged(findtext);
 
 }
 

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import base.BaseTest;
-import securitycheck.XSSUtils;
+import securitycheck.SecUtils;
 
 public class Test1XSS extends BaseTest{
 	 
@@ -27,7 +27,7 @@ public class Test1XSS extends BaseTest{
 	 
 	 //boolean result;
 	// result=XSSUtils.isAlertPresent(driver);
-	 XSSUtils.assertVulnerable(driver, "the page is vulnerable");
+	 SecUtils.assertVulnerable(driver, "the page is vulnerable");
 	// Assert.assertTrue(result,"Alert is here and  present");
 	 
 	 WebDriverWait wait = new WebDriverWait(driver, 10);//d
@@ -45,7 +45,7 @@ public class Test1XSS extends BaseTest{
 	// XSSUtils.AssertNotVulnerable(alert present, lEVEL MUST be simple)
 	
 	//XSSUtils.AssertNotVulnerable(XSSUtils.assertVulnerable(alertclear));
-	 XSSUtils.assertVulnerable(driver,"hacked"); 
+	 SecUtils.assertVulnerable(driver,"hacked"); 
 	 
 	 
 	 driver.findElement(By.linkText("XSS (Stored)")).click();

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
+import securitycheck.SecUtils;
 
 public class Test3CommandInjection extends BaseTest{
 	boolean test = false;
@@ -31,7 +32,7 @@ public class Test3CommandInjection extends BaseTest{
 	wait.until(ExpectedConditions.visibilityOf(tag));
 	Thread.sleep(1000);
 
-	boolean findtext = tag.getText().equalsIgnoreCase("hacked");
+	boolean findtext = tag.getText().contains("hacked");
 	
 	if (findtext) {
 		test= true;
@@ -58,5 +59,12 @@ public class Test3CommandInjection extends BaseTest{
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/p/input[2]")).click();
 	
+	WebDriverWait wait = new WebDriverWait(driver, 10);//
+	WebElement tag = driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/pre"));
+	System.out.println(tag.getText());
+	wait.until(ExpectedConditions.visibilityOf(tag));
+	Thread.sleep(1000);
+	
+	SecUtils.CMPresnets(driver, "hacked");
 	}
 }

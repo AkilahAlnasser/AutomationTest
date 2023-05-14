@@ -1,5 +1,6 @@
 package securitycheck;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,6 +8,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SecUtils {
 
+	public static boolean CMPresnets (WebDriver driver, String hacked ) {
+	boolean test;
+		boolean findtext = driver.findElement(By.tagName("pre")).getText().contains(hacked);
+		
+		if (findtext) {
+			test= true;
+			System.out.println("page is vulnerable");
+		}else {
+			test= false;
+			System.out.println("page is not vulnerable");
+		
+			//System.out.println();
+		}
+		return test; 
+	}
+	
 	public static boolean isAlertPresent(WebDriver driver) {
 
 		boolean foundAlert = false;

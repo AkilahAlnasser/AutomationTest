@@ -27,7 +27,7 @@ public class Test1XSS extends BaseTest{
 	 
 	 //boolean result;
 	// result=XSSUtils.isAlertPresent(driver);
-	 SecUtils.assertVulnerable(driver, "the page is vulnerable");
+	 SecUtils.assertXSSVulnerable(driver, "the page is vulnerable");
 	// Assert.assertTrue(result,"Alert is here and  present");
 	 
 	 WebDriverWait wait = new WebDriverWait(driver, 10);//d
@@ -44,8 +44,8 @@ public class Test1XSS extends BaseTest{
 	//tils.assertNotVulnerable(Vulnerability.XSS, Level.SIMPLE);
 	// XSSUtils.AssertNotVulnerable(alert present, lEVEL MUST be simple)
 	
-	//XSSUtils.AssertNotVulnerable(XSSUtils.assertVulnerable(alertclear));
-	 SecUtils.assertVulnerable(driver,"hacked"); 
+	
+	 SecUtils.assertXSSVulnerable(driver,"hacked"); 
 	 
 	 
 	 driver.findElement(By.linkText("XSS (Stored)")).click();

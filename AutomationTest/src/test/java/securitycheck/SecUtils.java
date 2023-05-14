@@ -8,22 +8,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SecUtils {
 
-	public static boolean CMPresnets (WebDriver driver, String hacked ) {
-	boolean test;
+	public static boolean CMPresnets(WebDriver driver, String hacked) {
+
+		boolean test;
 		boolean findtext = driver.findElement(By.tagName("pre")).getText().contains(hacked);
-		
+
 		if (findtext) {
-			test= true;
+			test = true;
 			System.out.println("page is vulnerable");
-		}else {
-			test= false;
+		} else {
+			test = false;
 			System.out.println("page is not vulnerable");
-		
-			//System.out.println();
+
+			// System.out.println();
 		}
-		return test; 
+		return test;
 	}
-	
+
 	public static boolean isAlertPresent(WebDriver driver) {
 
 		boolean foundAlert = false;
@@ -39,8 +40,6 @@ public class SecUtils {
 		return foundAlert;
 	}
 
-
-
 	public static boolean AssertNotVulnerable(Object vuln) {
 		// boolean fail
 
@@ -54,7 +53,6 @@ public class SecUtils {
 
 	public static boolean isPasswordChanged(boolean foundtag) {
 
-		
 		try {
 
 			if (foundtag) {
@@ -73,8 +71,8 @@ public class SecUtils {
 		return foundtag;
 
 	}
-	
-	public static boolean assertVulnerable(WebDriver driver, String message) throws InterruptedException {
+
+	public static boolean assertXSSVulnerable(WebDriver driver, String message) throws InterruptedException {
 		// if vulnrabiltyt.xss then go to the level if the level. simple which
 		// is ,script> alert() </script> if the alert not present then
 		// retun true
@@ -82,8 +80,8 @@ public class SecUtils {
 		boolean alert = isAlertPresent(driver);
 		if (alert == true) {
 			try {// try begain
-				// WebDriverWait wait1 = new WebDriverWait(driver, 10);
-				// boolean alertIsPresent= ExpectedConditions.alertIsPresent() != null;
+					// WebDriverWait wait1 = new WebDriverWait(driver, 10);
+					// boolean alertIsPresent= ExpectedConditions.alertIsPresent() != null;
 
 				// Assert.assertTrue(alert);
 

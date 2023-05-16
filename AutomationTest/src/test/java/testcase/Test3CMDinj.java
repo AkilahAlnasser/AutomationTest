@@ -18,10 +18,8 @@ package testcase;
 		
 		@Test
 		public void commandInjectionLow() throws InterruptedException {
-		driver.findElement(By.linkText("DVWA Security")).click();
-		Select drpCountry = new Select(driver.findElement(By.name("security")));
-		drpCountry.selectByValue("low");
-		driver.findElement(By.name("seclev_submit")).click();
+			
+
 		System.out.println(driver.getCurrentUrl());
 		
 		driver.findElement(By.linkText("Command Injection")).click();
@@ -44,7 +42,7 @@ package testcase;
 			test= false;
 			System.out.println("page is not vulnerable");
 		
-			//System.out.println();
+			
 		}
 		
 		}
@@ -71,3 +69,4 @@ package testcase;
 		SecUtils.CMPresnets(driver, "hacked");
 		}
 	}
+	//System.out.println();

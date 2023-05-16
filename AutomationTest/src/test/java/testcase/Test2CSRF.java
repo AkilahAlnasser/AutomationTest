@@ -20,12 +20,7 @@ public class Test2CSRF extends BaseTest {
 	@Test
 	public void testCSRFLow() throws InterruptedException {
 
-		
-		driver.findElement(By.linkText("DVWA Security")).click();
-		Select drpCountry = new Select(driver.findElement(By.name("security")));
-		drpCountry.selectByValue("low");
-		driver.findElement(By.name("seclev_submit")).click();
-		System.out.println(driver.getCurrentUrl());
+
 
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("file:///C:/xampp/htdocs/CSRF/CSRFhacked.html");
@@ -55,12 +50,7 @@ public class Test2CSRF extends BaseTest {
 @Test
 public void testCSRFMeduim() throws InterruptedException {
 
-	
-	driver.findElement(By.linkText("DVWA Security")).click();
-	Select drpCountry = new Select(driver.findElement(By.name("security")));
-	drpCountry.selectByValue("medium");
-	driver.findElement(By.name("seclev_submit")).click();
-	System.out.println(driver.getCurrentUrl());
+
 
 	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	driver.get("file:///C:/xampp/htdocs/CSRF/CSRFhacked.html");

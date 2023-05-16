@@ -1,6 +1,8 @@
 package testcase;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
@@ -13,33 +15,23 @@ public class Test4SQLinj {
 		
 		@Test
 		public void sqlInjectionLow() throws InterruptedException {
-		driver.findElement(By.linkText("DVWA Security")).click();
-		Select drpCountry = new Select(driver.findElement(By.name("security")));
-		drpCountry.selectByValue("low");
-		driver.findElement(By.name("seclev_submit")).click();
-		System.out.println(driver.getCurrentUrl());
+
+		
 		
 		driver.findElement(By.linkText("SQL Injection")).click();
+		System.out.println(driver.getCurrentUrl());
 		driver.findElement(By.name("id")).sendKeys("a' OR 1=1 #");
 		driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/p/input[2]")).click();
-		
+		Thread.sleep(1000)	;
 				
+		//if ("a'or 1=1--" sendkey gettext().conatins("server")or sendkey gettext().conatins("database") )
+			//	{
+			//then  
+			//	}
+		
 		}
 		
-		@Test
-		public void sqlInjectionHigh() throws InterruptedException {
-		driver.findElement(By.linkText("DVWA Security")).click();
-		Select drpCountry = new Select(driver.findElement(By.name("security")));
-		drpCountry.selectByValue("medium");
-		driver.findElement(By.name("seclev_submit")).click();
-		System.out.println(driver.getCurrentUrl());
 		
-		driver.findElement(By.linkText("SQL Injection")).click();
-		driver.findElement(By.name("id")).sendKeys("a' OR 1=1 #");
-		driver.findElement(By.name("Submit")).click();
-		
-				
-		}
 		
 		}
 }

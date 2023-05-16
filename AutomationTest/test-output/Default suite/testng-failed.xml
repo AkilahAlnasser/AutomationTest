@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcase.Test4SQLinj$TestSQLInj">
+      <class name="testcase.Test1XSS">
         <methods>
+          <include name="testXSSReflected"/>
           <include name="setUp"/>
-          <include name="sqlInjectionHigh"/>
         </methods>
-      </class> <!-- testcase.Test4SQLinj$TestSQLInj -->
+      </class> <!-- testcase.Test1XSS -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

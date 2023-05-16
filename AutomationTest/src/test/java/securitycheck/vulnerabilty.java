@@ -3,7 +3,7 @@ package securitycheck;
 abstract  class vulnerabilty {
 String xss;
 String CSRF;
-public static String XSS="xss";
+public static final String XSS="xss";
 public vulnerabilty() {
 
 	

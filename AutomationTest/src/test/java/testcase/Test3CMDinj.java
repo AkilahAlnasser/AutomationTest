@@ -18,12 +18,12 @@ package testcase;
 		
 		@Test
 		public void commandInjectionLow() throws InterruptedException {
-			
+			String ip="192.168.1.227";
 
 		System.out.println(driver.getCurrentUrl());
 		
 		driver.findElement(By.linkText("Command Injection")).click();
-		driver.findElement(By.name("ip")).sendKeys("127.0.01 && whoami && echo \"you have been hacked\" ");
+		driver.findElement(By.name("ip")).sendKeys("127.0.01 && ipconfig && echo \"you have been hacked\" ");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/p/input[2]")).click();
 		
@@ -33,17 +33,9 @@ package testcase;
 		wait.until(ExpectedConditions.visibilityOf(tag));
 		Thread.sleep(1000);
 
-		boolean findtext = tag.getText().contains("hacked");
+		SecUtils.assertCMDIvulnerable(driver,ip);// assert IP command
+		SecUtils.assertCMDIechovulnerable(driver,"you have been hacked");//assert echo command
 		
-		if (findtext) {
-			test= true;
-			System.out.println("page is vulnerable");
-		}else {
-			test= false;
-			System.out.println("page is not vulnerable");
-		
-			
-		}
 		
 		}
 		
@@ -66,7 +58,7 @@ package testcase;
 		wait.until(ExpectedConditions.visibilityOf(tag));
 		Thread.sleep(1000);
 		
-		SecUtils.CMPresnets(driver, "hacked");
+		SecUtils.CMDIPresnets(driver, "hacked");
 		}
 	}
 	//System.out.println();

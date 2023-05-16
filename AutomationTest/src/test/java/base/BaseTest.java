@@ -32,7 +32,7 @@ public class BaseTest {
 			WebDriverManager.chromedriver().setup();
 			 driver = new ChromeDriver();
 			 driver.get(prop.getProperty("testurl"));
-			
+			security("low");
 		}
 		
 		else if(prop.getProperty("browser").equalsIgnoreCase("firfox")) {

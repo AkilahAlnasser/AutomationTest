@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SecUtils {
-
-	public static boolean CMPresnets(WebDriver driver, String hacked) {
+	
+	public static boolean CMDIPresnets(WebDriver driver, String hacked) {
 
 		boolean test;
 		boolean findtext = driver.findElement(By.tagName("pre")).getText().contains(hacked);
@@ -42,7 +42,7 @@ public class SecUtils {
 		return foundAlert;
 	}
 
-	public static boolean AssertNotVulnerable(Object vuln) {
+	public static boolean AssertNotVulnerable(WebDriver driver,Object vuln) {
 		// boolean fail
 
 		if (vuln == vulnerabilty.XSS) {
@@ -80,23 +80,59 @@ public class SecUtils {
 		// retun true
 //try it
 		boolean findalert =false;
-	
-			try {// try begain
-					 WebDriverWait wait1 = new WebDriverWait(driver, 10);
+		 WebDriverWait wait1 = new WebDriverWait(driver, 10);
+			try {
+					
 			 Alert alertclear = wait1.until(ExpectedConditions.alertIsPresent());
-			 Thread.sleep(1000);
-				 alertclear.accept();
+
 					if (alertclear != null) {
-				System.out.println(message);
-				findalert= true;
+						findalert= true;
+						System.out.println(message);
+				
 					}
 			} catch (NoAlertPresentException e) {
-				System.out.println("alert not present");
 				findalert=  false;
+				System.out.println("alert not present");
+				
 
 			}
 			return findalert ;
 		
 
 	}
+	//SecUtils.assertXSSVulnerable(driver,level.low);
+
+	public static boolean assertCMDIvulnerable(WebDriver driver, String ip) {
+		// TODO Auto-generated method stub
+		boolean ipPresent;
+		boolean getIP=driver.findElement(By.tagName("pre")).getText().contains(ip);
+		if (getIP) {
+			ipPresent = true;
+			System.out.println("page is ipconfig vulnerable");
+		} else {
+			ipPresent = false;
+			System.out.println("page is not ipconfig vulnerable");
+
+			// System.out.println();
+		}
+		return ipPresent;
+		}
+
+	public static boolean assertCMDIechovulnerable(WebDriver driver, String echo) {
+		// TODO Auto-generated method stub
+		
+		boolean getecho =driver.findElement(By.tagName("pre")).getText().contains(echo);
+		boolean echoPresent;
+		if (getecho) {
+			echoPresent= true;
+			System.out.println("page is echo command vulnerable");
+		}else {
+			echoPresent= false;
+			System.out.println("page is not echo command vulnerable");
+		
+			
+		}
+		return echoPresent;
+	}
+	
 }// XSSUtils.AssertNotVulnerable(XSSUtils.XSS);

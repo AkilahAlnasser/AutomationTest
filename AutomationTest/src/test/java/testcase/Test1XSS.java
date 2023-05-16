@@ -6,7 +6,6 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import base.BaseTest;
 import securitycheck.SecUtils;
@@ -62,23 +61,42 @@ public class Test1XSS extends BaseTest{
   @Test
   public void testXSSReStored() throws InterruptedException  {
 	  
-		 
-		 driver.findElement(By.linkText("XSS (Stored)")).click();
+		driver.findElement(By.linkText("DVWA Security")).click();
+		Thread.sleep(1000);
+		Select drpCountry = new Select(driver.findElement(By.name("security")));
+		drpCountry.selectByValue("low");
+		Thread.sleep(500);
+		driver.findElement(By.name("seclev_submit")).click();
+		Thread.sleep(1000);
+		WebDriverWait wait1 = new WebDriverWait(driver, 10);
+	  driver.findElement(By.linkText("XSS (Stored)")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.name("btnClear")).click();
+	  
+		Thread.sleep(1000);
+		 Alert alertclear = wait1.until(ExpectedConditions.alertIsPresent());
+		 Thread.sleep(1000);
+		 alertclear.accept();
 		 driver.findElement(By.name("txtName")).sendKeys("crypto");
-		 //driver.findElement(By.name("mtxMessage")).sendKeys("<sCRiPt> alert(\"You have been hacked!\"); </script>");
-		 //driver.findElement(By.name("btnSign")).click();
+			Thread.sleep(1000);
+		 driver.findElement(By.name("mtxMessage")).sendKeys("<sCRiPt> alert(\"You have been hacked!\"); </script>");
+			Thread.sleep(1000);
+		 driver.findElement(By.name("btnSign")).click();
+		 Thread.sleep(1000);
+		
+		 Alert alert1 = wait1.until(ExpectedConditions.alertIsPresent());
+		 Thread.sleep(1000);
+		
+		SecUtils.assertXSSVulnerable(driver,"stored XSS vulnerability");
+		 alert1.accept();
+	  
+		  driver.findElement(By.name("btnClear")).click();
+			Thread.sleep(1000);
+			 wait1.until(ExpectedConditions.alertIsPresent());
+			 Thread.sleep(1000);
+			 alertclear.accept();
 		 
-
-		// WebDriverWait wait1 = new WebDriverWait(driver, 10);
-		// Alert alert1 = wait1.until(ExpectedConditions.alertIsPresent());
-		// assertThat(open_browser..isAlertDisplayed()).isFalse();
-		// Thread.sleep(1000);
-		 //alert1.accept();
-		 
-		// driver.findElement(By.name("btnClear")).click();
-		 //Alert alertclear = wait1.until(ExpectedConditions.alertIsPresent());
-		 //Thread.sleep(1000);
-		// alertclear.accept();
+	
 	  
 
  

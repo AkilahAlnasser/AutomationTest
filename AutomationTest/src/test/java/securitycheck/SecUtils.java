@@ -10,7 +10,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SecUtils {
 	
-	public static boolean CMDIPresnets(WebDriver driver, String hacked) {
+
+	public static final String low = new String("low");
+	public static final String medium = new String("medium");
+	public static final String XSS = new String("XSS");
+	public static final String SQL = new String("sql");
+	
+	public static boolean isCMDIPresnets(WebDriver driver, String hacked) {
 
 		boolean test;
 		boolean findtext = driver.findElement(By.tagName("pre")).getText().contains(hacked);
@@ -42,15 +48,70 @@ public class SecUtils {
 		return foundAlert;
 	}
 
-	public static boolean AssertNotVulnerable(WebDriver driver,Object vuln) {
-		// boolean fail
-
-		if (vuln == vulnerabilty.XSS) {
-
-			return false;
-
+	public static boolean assertXSSVulnerablelevel(WebDriver driver, String SecLevel) {
+		
+		boolean foundAlert = false;
+		
+		if(SecUtils.low==SecLevel){
+		
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		try {
+			wait.until(ExpectedConditions.alertIsPresent());
+			foundAlert = true;
+			System.out.println("the Page is XSS low level Vulnerable");
+		} catch (TimeoutException e) {
+			foundAlert = false;
+			System.out.println("the page is not low level XSS vulnerable");
 		}
-		return true;
+		}else if (SecUtils.medium=="medium")
+		{
+
+	
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		try {
+			wait.until(ExpectedConditions.alertIsPresent());
+			foundAlert = true;
+			System.out.println("the Page is XSS medium level Vulnerable");
+		} catch (TimeoutException e) {
+			foundAlert = false;
+			System.out.println("the page is not medium medium XSS vulnerable");
+		}
+		}
+		return foundAlert;
+	}
+	
+	public static boolean assertVulnerable(WebDriver driver,String vulnerability, String SecLeve) {
+		boolean vulnexist = false;
+	
+		if (vulnerability==SecUtils.XSS) {
+			if(SecLeve==SecUtils.low) {
+				
+				assertXSSVulnerable(driver);
+				vulnexist=true;
+				System.out.println("page is vulnerable with low XSS flaw");
+			}else if(SecLeve==SecUtils.medium) {
+				
+				assertXSSVulnerable(driver);
+				vulnexist=true;
+				System.out.println("page is vulnerable with medium XSS flaw");
+			}
+			
+		}
+		else if (vulnerability==SecUtils.SQL) {
+			if(SecLeve==SecUtils.low) {
+				
+				assertXSSVulnerable(driver);
+				vulnexist=true;
+				System.out.println("page is vulnerable with low SQL flaw");
+			}else if(SecLeve==SecUtils.medium) {
+				
+				assertXSSVulnerable(driver);
+				vulnexist=true;
+				System.out.println("page is vulnerable with medium SQL flaw");
+			}
+		}
+
+		return vulnexist;
 	}
 
 	public static boolean isPasswordChanged(boolean foundtag) {
@@ -100,7 +161,6 @@ public class SecUtils {
 		
 
 	}
-	//SecUtils.assertXSSVulnerable(driver,level.low);
 
 	public static boolean assertCMDIvulnerable(WebDriver driver, String ip) {
 		// TODO Auto-generated method stub
@@ -135,4 +195,4 @@ public class SecUtils {
 		return echoPresent;
 	}
 	
-}// XSSUtils.AssertNotVulnerable(XSSUtils.XSS);
+}

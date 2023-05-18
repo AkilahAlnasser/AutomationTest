@@ -21,7 +21,7 @@ public class Test2CSRF extends BaseTest {
 	public void testCSRFLow() throws InterruptedException {
 
 
-
+		super.security("low");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("file:///C:/xampp/htdocs/CSRF/CSRFhacked.html");
 		System.out.println(driver.getCurrentUrl());

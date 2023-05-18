@@ -32,7 +32,7 @@ public class BaseTest {
 			WebDriverManager.chromedriver().setup();
 			 driver = new ChromeDriver();
 			 driver.get(prop.getProperty("testurl"));
-			security("low");
+			//security("low");
 		}
 		
 		else if(prop.getProperty("browser").equalsIgnoreCase("firfox")) {
@@ -42,7 +42,7 @@ public class BaseTest {
 		}
 	}
 	
-	public void security(String level) {
+	public static void security(String level) {
 		if (level=="low") {
 		driver.findElement(By.linkText("DVWA Security")).click();
 		Select drpCountry = new Select(driver.findElement(By.name("security")));

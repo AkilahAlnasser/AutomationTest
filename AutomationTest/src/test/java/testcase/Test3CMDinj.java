@@ -58,7 +58,7 @@ package testcase;
 		wait.until(ExpectedConditions.visibilityOf(tag));
 		Thread.sleep(1000);
 		
-		SecUtils.CMDIPresnets(driver, "hacked");
+		SecUtils.isCMDIPresnets(driver, "hacked");
 		}
 	}
 	//System.out.println();

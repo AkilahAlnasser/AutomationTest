@@ -33,10 +33,6 @@ public class Test1XSS extends BaseTest {
 		// SecUtils.assertXSSVulnerablelevel(driver,SecUtils.low);
 		alert.accept();
 
-		// if xss is present then assert is vulnerable and condition is false
-		// XSSUtils.AssertNotVulnerable(false, "This page is Not vulnerable");
-		// tils.assertNotVulnerable(Vulnerability.XSS, Level.SIMPLE);
-		// XSSUtils.AssertNotVulnerable(alert present, lEVEL MUST be simple)
 
 	}
 

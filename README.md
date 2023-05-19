@@ -43,9 +43,16 @@ TestNg Framework was installing inside the JDK environment
 ## Running the tests
 
 Explain how to run the automated tests for this system
-run the automation testcase
+run the automation testcase</br>
 
- ![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/351b8c8b-2685-45f6-83bd-bb0821d26a82)
+ ![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/351b8c8b-2685-45f6-83bd-bb0821d26a82)</br>
+ Assert if the page is XSS vulnerable </br>
+![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/fe265aa6-2c0c-483d-9f5f-6571f216effa)</br>
+ Asserting echo command in command injection vulnerabilty</br>
+![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/76457fcb-ee30-49d1-a698-dba907f554d6)</br>
+same assertion but the command echo was missing</br>
+![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/2f99b99a-a2e1-499c-acfc-fa9e857e88ac))</br>
+
 
 
 ### Break down into end to end tests

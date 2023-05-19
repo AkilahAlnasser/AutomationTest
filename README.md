@@ -43,6 +43,10 @@ TestNg Framework was installing inside the JDK environment
 ## Running the tests
 
 Explain how to run the automated tests for this system
+run the automation testcase
+
+ ![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/351b8c8b-2685-45f6-83bd-bb0821d26a82)
+
 
 ### Break down into end to end tests
 

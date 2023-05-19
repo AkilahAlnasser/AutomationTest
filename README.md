@@ -85,7 +85,8 @@ SecUtils.vulnerableUrl(driver, findtext);
 SecUtils.assertCMDIvulnerable(driver,ip);// assert IP command
 SecUtils.assertCMDIechovulnerable(driver,"you have been hacked");//assert echo command
 SecUtils.isCMDIPresnets(driver, "hacked");
-
+SecUtils.CMDIetcpasswodVulnerabilty(driver, injection);
+SecUtils.CMDIwhoamiVulnerabilty(driver, expectedResult);
 ```
 
 

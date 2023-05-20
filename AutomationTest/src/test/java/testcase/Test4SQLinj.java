@@ -16,22 +16,19 @@ public class Test4SQLinj {
 		@Test
 		public void sqlInjectionLow() throws InterruptedException {
 
-		
-		
+		super.security("low");
+		 
 		driver.findElement(By.linkText("SQL Injection")).click();
 		System.out.println(driver.getCurrentUrl());
 		driver.findElement(By.name("id")).sendKeys("a' OR 1=1 #");
 		driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/p/input[2]")).click();
 		Thread.sleep(1000)	;
 				
-		//if ("a'or 1=1--" sendkey gettext().conatins("server")or sendkey gettext().conatins("database") )
-			//	{
-			//then  
-			//	}
-		
+			}
+
 		}
 		
 		
 		
-		}
+		
 }

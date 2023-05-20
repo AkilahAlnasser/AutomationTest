@@ -1,5 +1,8 @@
 package securitycheck;
 
+
+import java.io.File;
+import java.io.IOException;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
@@ -13,8 +16,11 @@ public class SecUtils {
 
 	public static final String low = new String("low");
 	public static final String medium = new String("medium");
+	public static final String high = new String("high");
 	public static final String XSS = new String("XSS");
 	public static final String SQL = new String("sql");
+	public static final String CSRF = new String("CSRF");
+	public static final String CMDI = new String("command injection");
 	
 	public static boolean isCMDIPresnets(WebDriver driver, String hacked) {
 
@@ -28,7 +34,7 @@ public class SecUtils {
 			test = false;
 			System.out.println("page is not vulnerable");
 
-			// System.out.println();
+	
 		}
 		return test;
 	}
@@ -120,7 +126,7 @@ public class SecUtils {
 
 			if (foundtag) {
 
-				System.out.println("the site is vulnerable");
+				System.out.println("The page is vulnerable");
 
 			} else {
 				foundtag = false;
@@ -136,10 +142,7 @@ public class SecUtils {
 	}
 
 	public static boolean assertXSSVulnerable(WebDriver driver, String message) throws InterruptedException {
-		// if vulnrabiltyt.xss then go to the level if the level. simple which
-		// is ,script> alert() </script> if the alert not present then
-		// retun true
-//try it
+
 		boolean findalert =false;
 		 WebDriverWait wait1 = new WebDriverWait(driver, 10);
 			try {
@@ -173,7 +176,7 @@ public class SecUtils {
 			ipPresent = false;
 			System.out.println("page is not ipconfig vulnerable");
 
-			// System.out.println();
+		
 		}
 		return ipPresent;
 		}
@@ -194,5 +197,103 @@ public class SecUtils {
 		}
 		return echoPresent;
 	}
+	public static void vulnerableUrl(WebDriver driver, boolean psswordCanged ) {
+		
+		if (psswordCanged) {
+			
+			System.out.println(driver.getCurrentUrl());
+			System.out.println("The above URL is CSRF vulnerable");
+		}
+		else {
+			
+			System.out.println(driver.getCurrentUrl());
+			System.out.println("The above URL is not CSRF vulnerable");
+		}
+	}
+
+	public static void CSRFVulnerableFormExist(WebDriver driver, String filePath) throws IOException {
+		// TODO Auto-generated method stub
+		//String filePath;
+		 File file = new File(filePath);
+	      // FileInputStream fis = null;
+
+	        if(file.getName().isEmpty()) {
+	        	  // fis.available();
+	        	   System.out.println("CSRF vulnerable file exist");
+	        	   
+	           } else
+	           {
+	        	   System.out.println("CSRF vulnerable file not exist"); 
+	           }
+	        
+	    }
+
+	public static boolean CMDIetcpasswodVulnerabilty(WebDriver driver, String injection) {
+		// TODO Auto-generated method stub
+		boolean isVuln= false;
+		boolean result=driver.findElement(By.tagName("pre")).getText().contains("root");
+
+		if (injection.contains("cat /etc/passwd")) {
+			
+			if(result) {
+			isVuln=true;
+				System.out.println("The page has access to /etc/passwd");
+		}else
+		{
+				isVuln=false;
+				System.out.println("The page has no access to /etc/passwd");}
+			
+		}
+		return isVuln;
+		}
+	
+	public static boolean CMDIwhoamiVulnerabilty(WebDriver driver, String expectedResult) {
+		// TODO Auto-generated method stub
+		boolean isVuln= false;
+		boolean result=driver.findElement(By.tagName("pre")).getText().contains(expectedResult);
+
+		
+		if(result==true) 
+			{
+			isVuln=true;
+				System.out.println("The page has accepted whoami command ");
+		}else
+		{
+				isVuln=false;
+				System.out.println("The page has not accepted whoami command or expected result defferent");}
+			
+		
+		return isVuln;
+		}
+	// System.out.println();
+
+	public static boolean assertCSPVulnerable(WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+
+			boolean foundAlert = false;
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			
+			try {
+				
+				if(wait.until(ExpectedConditions.alertIsPresent()) != null) {
+				foundAlert = true;
+				System.out.println("Page is CSP Vulnerable");
+			}else {
+				foundAlert = false;
+				System.out.println("alert not CSP present");
+			}
+			} catch (TimeoutException e) {
+				System.out.println("timeout error");
+			}
+			return foundAlert;
+		
+	}
 	
 }
+		
+	
+
+	
+	
+

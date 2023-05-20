@@ -1,27 +1,34 @@
 package testcase;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
+import securitycheck.SecUtils;
 
 public class Test5CSPBypass extends BaseTest{
 	
 	@Test
 	public void CSPBypassLow() throws InterruptedException {
-	driver.findElement(By.linkText("DVWA Security")).click();
-	Select drpCountry = new Select(driver.findElement(By.name("security")));
-	drpCountry.selectByValue("low");
-	driver.findElement(By.name("seclev_submit")).click();
-	System.out.println(driver.getCurrentUrl());
-	
+		
+		super.security("low");	
 	driver.findElement(By.linkText("CSP Bypass")).click();
 	Thread.sleep(1000);
-	driver.findElement(By.name("include")).sendKeys("<script nonce=\"TmV2ZXIgZ29pbmcgdG8gZ2l2ZSB5b3UgdXA=\">alert(1)</script>");
+	driver.findElement(By.name("include")).sendKeys("http://localhokst/CSP.scss");
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/input[2]")).click();
 	Thread.sleep(500);
+	WebDriverWait wait = new WebDriverWait(driver, 10);
+	Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+	
+	SecUtils.assertCSPVulnerable(driver);
+	
+	alert.accept();
+	
 	
 	}
 }

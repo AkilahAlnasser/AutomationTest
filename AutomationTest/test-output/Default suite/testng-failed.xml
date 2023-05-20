@@ -5,8 +5,8 @@
     <classes>
       <class name="testcase.Test1XSS">
         <methods>
+          <include name="testXSSReflected"/>
           <include name="setUp"/>
-          <include name="testXSSReStored"/>
         </methods>
       </class> <!-- testcase.Test1XSS -->
     </classes>

@@ -30,7 +30,7 @@ public class Test2CSRF extends BaseTest {
 		//SecUtils.CSRFVulnerableFormExist(driver, "file:///C:/xampp/htdocs/CSRF/CSRFhacked.html");
 	WebElement np=	driver.findElement(By.name("password_new"));
 	np.sendKeys("hacked");
-		driver.findElement(By.name("password_conf")).sendKeys("hacked");
+		driver.findElement(By.name("password_conf")).sendKeys("hacaked");
 		Thread.sleep(500);
 		driver.findElement(By.name("Change")).click();
 		Thread.sleep(1000);
@@ -47,7 +47,7 @@ public class Test2CSRF extends BaseTest {
 		//SecUtils.isPasswordChanged(findtext);
 		
 	
-			//SecUtils.CSRFVulnerableFormExist("file:///C:/xampp/htdocs/CSRF/CSRFhacked.html");
+			//SecUtils.CSRFVulnerableFormExist(driver,"http://localhost/CSRF");
 	
 	}
 

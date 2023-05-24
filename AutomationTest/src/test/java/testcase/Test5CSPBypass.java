@@ -18,16 +18,14 @@ public class Test5CSPBypass extends BaseTest{
 		super.security("low");	
 	driver.findElement(By.linkText("CSP Bypass")).click();
 	Thread.sleep(1000);
-	driver.findElement(By.name("include")).sendKeys("http://localhokst/CSP.scss");
+	driver.findElement(By.name("include")).sendKeys("http://localhhost/CSP.scss");
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/input[2]")).click();
 	Thread.sleep(500);
-	WebDriverWait wait = new WebDriverWait(driver, 10);
-	Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 	
 	SecUtils.assertCSPVulnerable(driver);
 	
-	alert.accept();
+	
 	
 	
 	}

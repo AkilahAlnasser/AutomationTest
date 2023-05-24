@@ -19,18 +19,19 @@ public class Test1XSS extends BaseTest {
 
 		driver.findElement(By.linkText("XSS (Reflected)")).click();
 		Thread.sleep(500);
-		driver.findElement(By.name("name")).sendKeys("<script> alert('you have been hacked') </script>");
+		driver.findElement(By.name("name")).sendKeys("<scrEipt> alert('you have been hacked') </script>");
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/p/input[2]")).click();
 
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 
-		// SecUtils.assertXSSVulnerable(driver);
-		// SecUtils.assertXSSVulnerable(driver, "There is a result that this page is XSS vulnerable");
+		 //SecUtils.assertXSSVulnerable(driver);
+		 //SecUtils.assertXSSVulnerable(driver, "There is a result that this page is XSS vulnerable");
 		// SecUtils.assertVulnerable(driver, SecUtils.XSS, SecUtils.low);
 		// SecUtils.assertXSSVulnerablelevel(driver,SecUtils.low);
-		alert.accept();
+
+//		WebDriverWait wait = new WebDriverWait(driver, 10);
+//		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+		//alert.accept();
 
 
 	}

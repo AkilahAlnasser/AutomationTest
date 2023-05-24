@@ -3,11 +3,14 @@ package securitycheck;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -45,11 +48,12 @@ public class SecUtils {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		try {
 			wait.until(ExpectedConditions.alertIsPresent());
+			driver.switchTo().alert().accept();
 			foundAlert = true;
 			System.out.println("Page is Vulnerable");
 		} catch (TimeoutException e) {
 			foundAlert = false;
-			System.out.println("alert not present");
+			System.out.println("page not Vulnerable");
 		}
 		return foundAlert;
 	}
@@ -143,25 +147,18 @@ public class SecUtils {
 
 	public static boolean assertXSSVulnerable(WebDriver driver, String message) throws InterruptedException {
 
-		boolean findalert =false;
-		 WebDriverWait wait1 = new WebDriverWait(driver, 10);
-			try {
-					
-			 Alert alertclear = wait1.until(ExpectedConditions.alertIsPresent());
-
-					if (alertclear != null) {
-						findalert= true;
-						System.out.println(message);
-				
-					}
-			} catch (NoAlertPresentException e) {
-				findalert=  false;
-				System.out.println("alert not present");
-				
-
-			}
-			return findalert ;
-		
+		boolean foundAlert = false;
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		try {
+			wait.until(ExpectedConditions.alertIsPresent());
+			driver.switchTo().alert().accept();
+			foundAlert = true;
+			System.out.println(message);
+		} catch (TimeoutException e) {
+			foundAlert = false;
+			System.out.println("page is not vulnerable");
+		}
+		return foundAlert;
 
 	}
 
@@ -197,6 +194,7 @@ public class SecUtils {
 		}
 		return echoPresent;
 	}
+	
 	public static void vulnerableUrl(WebDriver driver, boolean psswordCanged ) {
 		
 		if (psswordCanged) {
@@ -211,21 +209,19 @@ public class SecUtils {
 		}
 	}
 
-	public static void CSRFVulnerableFormExist(WebDriver driver, String filePath) throws IOException {
+	public static boolean CSRFVulnerableFormExist(WebDriver driver, String filePath) throws IOException {
 		// TODO Auto-generated method stub
-		//String filePath;
-		 File file = new File(filePath);
-	      // FileInputStream fis = null;
-
-	        if(file.getName().isEmpty()) {
-	        	  // fis.available();
-	        	   System.out.println("CSRF vulnerable file exist");
-	        	   
-	           } else
-	           {
-	        	   System.out.println("CSRF vulnerable file not exist"); 
-	           }
-	        
+			driver.get(filePath);
+			boolean findlink=false;
+try {
+	
+	findlink = driver.findElement(By.linkText("CSRFhacked.html")).isDisplayed();
+	System.out.println("Page link is available");
+} catch (TimeoutException e) {
+	
+	System.out.println("link not available");
+}
+	return findlink;
 	    }
 
 	public static boolean CMDIetcpasswodVulnerabilty(WebDriver driver, String injection) {
@@ -276,22 +272,41 @@ public class SecUtils {
 			
 			try {
 				
-				if(wait.until(ExpectedConditions.alertIsPresent()) != null) {
+				wait.until(ExpectedConditions.alertIsPresent());
+				driver.switchTo().alert().accept();
 				foundAlert = true;
 				System.out.println("Page is CSP Vulnerable");
-			}else {
-				foundAlert = false;
-				System.out.println("alert not CSP present");
-			}
+		
+			
+			
 			} catch (TimeoutException e) {
-				System.out.println("timeout error");
+				foundAlert = false;
+				System.out.println("page not CSP present");
 			}
 			return foundAlert;
 		
 	}
+
+	public static boolean assertSQLVulnerable(WebDriver driver, String injection) {
+		// TODO Auto-generated method stu
+		boolean result = true;
+		List<WebElement> rows = driver.findElements(By.xpath("//div[@class='vulnerable_code_area']/pre"));
+		for(int i=0; i<rows.size(); i++) {
+			
+			String getID=rows.get(i).getText().trim();
+			String str[] = getID.split("\\R");
+			System.out.println("=================================");
+			System.out.println(str[0]);
+			if(!(str[0].equalsIgnoreCase(injection))) {
+				result= false;
+			}
+			
+		}
+		return result;
+	}	
+	
 	
 }
-		
 	
 
 	

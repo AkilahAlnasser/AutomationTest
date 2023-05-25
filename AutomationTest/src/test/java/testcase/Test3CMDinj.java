@@ -61,4 +61,4 @@ package testcase;
 		//SecUtils.CMDIwhoamiVulnerabilty(driver, expectedResult);
 		}
 	}
-	//System.out.println();
+	

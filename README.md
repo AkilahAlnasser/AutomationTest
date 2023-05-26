@@ -52,10 +52,11 @@ run the automation testcase</br>
  Assert if the page is XSS vulnerable </br>
 <img src="https://github.com/zaraAlna/AutomationTest/assets/130008342/da64494b-276d-4243-8dfe-68ecffd6bc6d.png" width="60%" >
 
-<img scr="images/result.png"  width="90%">
 
-![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/fe265aa6-2c0c-483d-9f5f-6571f216effa)</br>
+</br>
  Asserting echo command in command injection vulnerabilty</br>
+ 
+ 
 ![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/76457fcb-ee30-49d1-a698-dba907f554d6)</br>
 same assertion but the command echo was missing</br>
 ![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/2f99b99a-a2e1-499c-acfc-fa9e857e88ac))</br>

@@ -23,12 +23,13 @@ TestNg Framework was installing inside the JDK environment
 
  <ins> planning the design instructures as follow</ins>
 
+<img src="images/Picture3.png" >
 
-<img src="https://user-images.githubusercontent.com/130008342/231169914-3c11818c-aeb7-49f7-88ef-0461ff386c97.png" width="50%" height="50%">
 
  <ins>After implemnting the design will be as follow</ins>
+ 
+<img src="images/Picture5.png" width="40%" height="40%">
 
-<img width="204" alt="image" src="https://user-images.githubusercontent.com/130008342/236644809-c1909393-3f5a-497a-b859-ab9b99389f4f.png">
 
 
 
@@ -46,9 +47,12 @@ TestNg Framework was installing inside the JDK environment
 
 Explain how to run the automated tests for this system
 run the automation testcase</br>
-
- ![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/351b8c8b-2685-45f6-83bd-bb0821d26a82)</br>
+<img src="images/Injection.png" width="60%" >
+</br>
  Assert if the page is XSS vulnerable </br>
+
+<img scr="images/result.png"  width="90%">
+
 ![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/fe265aa6-2c0c-483d-9f5f-6571f216effa)</br>
  Asserting echo command in command injection vulnerabilty</br>
 ![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/76457fcb-ee30-49d1-a698-dba907f554d6)</br>

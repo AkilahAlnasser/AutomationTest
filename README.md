@@ -1,13 +1,15 @@
 # AutomationTest
 Java Library to faciliate atomation testing using selemnium
 
-<img src="https://user-images.githubusercontent.com/130008342/236549472-412d0080-49d6-45b3-8ce9-6f3a6bb87133.png" width="75%" height="75%">
+<img alt="image" src="https://github.com/zaraAlna/AutomationTest/assets/130008342/ad3f7709-9829-461a-b888-5bf7b8f58919"  width="75%" height="75%">
+
+
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-What things you need to install the software and how to install them
+What Software you need to install to run this project
 
 ```
 Installing Java development toolkit (JDK) eclipse 
@@ -16,7 +18,7 @@ Installing DVWA and set it up and change the setting to enable all the database 
 TestNg Framework was installing inside the JDK environment  
 
 ```
-### Installing
+### Designing and implementation
 
 
  <ins> planning the design instructures as follow</ins>

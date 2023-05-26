@@ -50,6 +50,7 @@ run the automation testcase</br>
 <img src="images/Injection.png" width="60%" >
 </br>
  Assert if the page is XSS vulnerable </br>
+<img src="https://github.com/zaraAlna/AutomationTest/assets/130008342/da64494b-276d-4243-8dfe-68ecffd6bc6d.png" width="60%" >
 
 <img scr="images/result.png"  width="90%">
 

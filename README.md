@@ -93,17 +93,21 @@ Explain what these tests test and why
 
 ```
 SecUtils.assertXSSVulnerable(driver);
+SecUtils.isAlertPresent(driver);
 SecUtils.assertXSSVulnerable(driver, massege);
 SecUtils.assertXSSVulnerable(driver, "There is a trace that this page is XSS vulnerable");
 SecUtils.assertVulnerable(driver, SecUtils.XSS, SecUtils.low);
 SecUtils.assertXSSVulnerablelevel(driver,SecUtils.low);
 SecUtils.isPasswordChanged(findtext);
 SecUtils.vulnerableUrl(driver, findtext);
-SecUtils.assertCMDIvulnerable(driver,ip);// assert IP command
+CSRFVulnerableFormExist(WebDriver driver, String filePath)
+SecUtils.SecUtils.assertCMDIvulnerable(driver,ip);// assert IP command
 SecUtils.assertCMDIechovulnerable(driver,"you have been hacked");//assert echo command
 SecUtils.isCMDIPresnets(driver, "hacked");
 SecUtils.CMDIetcpasswodVulnerabilty(driver, injection);
 SecUtils.CMDIwhoamiVulnerabilty(driver, expectedResult);
+SecUtils.assertSQLVulnerable(driver, "ID: a' OR 1=1 #");
+SecUtils.assertCSPVulnerable(driver);
 ```
 
 

@@ -26,6 +26,7 @@ public class Test4SQLinj {
 		driver.findElement(By.name("id")).sendKeys("a' OR 1=1 #");
 		driver.findElement(By.xpath("//*[@id=\"main_body\"]/div/div/form/p/input[2]")).click();
 		Thread.sleep(1000)	;
+		//here is last check 
 				boolean actualResult = SecUtils.assertSQLVulnerable(driver, "ID: a' OR 1=1 #");
 				assertTrue(actualResult, "SQL Injection is not correct");
 

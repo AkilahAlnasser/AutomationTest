@@ -261,8 +261,20 @@ try {
 		
 		return isVuln;
 		}
-	// System.out.println();
-
+	
+	public static boolean isAlertPresent(WebDriver driver){
+	    boolean foundAlert = false;
+	    WebDriverWait wait = new WebDriverWait(driver, 10);
+	    try {
+	        wait.until(ExpectedConditions.alertIsPresent());
+	        foundAlert = true;
+	        System.out.println("page is vulnerable");
+	    } catch (TimeoutException e) {
+	        foundAlert = false;
+	        System.out.println("page is not vulnerable");
+	    }
+	    return foundAlert;
+	}
 	public static boolean assertCSPVulnerable(WebDriver driver) {
 		// TODO Auto-generated method stub
 		
@@ -305,6 +317,7 @@ try {
 		return result;
 	}	
 	
+	// System.out.println();
 	
 }
 	

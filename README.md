@@ -55,11 +55,20 @@ run the automation testcase</br>
 
 </br>
  Asserting echo command in command injection vulnerabilty</br>
- 
- 
-![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/76457fcb-ee30-49d1-a698-dba907f554d6)</br>
+<img src="https://github.com/zaraAlna/AutomationTest/assets/130008342/66e53b9f-4f62-4a6c-89c6-db0f0d9c98a3.png" width="60%" ></br>
+
+</br>
+
+
 same assertion but the command echo was missing</br>
-![image](https://github.com/AkilahAlnasser/AutomationTest/assets/130008342/2f99b99a-a2e1-499c-acfc-fa9e857e88ac))</br>
+
+</br>
+
+
+<img src="https://github.com/zaraAlna/AutomationTest/assets/130008342/259cdabb-80f4-447c-98a0-6c55931cd854.png" width="60%" ></br></br>
+
+
+
 
 
 

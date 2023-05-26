@@ -32,7 +32,9 @@ package testcase;
 		System.out.println(tag.getText());
 		wait.until(ExpectedConditions.visibilityOf(tag));
 		Thread.sleep(1000);
+
 		//check point
+//github.com/AkilahAlnasser/AutomationTest.git
 
 		SecUtils.assertCMDIvulnerable(driver,ip);// assert IP command
 		//SecUtils.assertCMDIechovulnerable(driver,"you have been hacked");//assert echo command
